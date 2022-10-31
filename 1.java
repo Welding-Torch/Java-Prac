@@ -23,12 +23,12 @@ public class Main{
         Employee[] ob = new Employee[c];//array of objects is optional i was getting bored
         for(i =0;i<c;i++ )
         {
-            System.out.print("Enter the name of the employee :");
+            System.out.print("Enter the name of the employee: ");
             String n = sc.next();
-            System.out.println("Enter the address of the employee");
-            String a = sc.next();
-            System.out.println("Enter the year of joining");
+            System.out.println("Enter the year of joining: ");
             int y = sc.nextInt();
+            System.out.println("Enter the address of the employee: ");
+            String a = sc.next();
             ob[i] = new Employee(n,y,a);
         }
         System.out.println("NAME\tYEAR OF JOINING\tADDRESS");
