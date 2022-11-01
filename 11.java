@@ -26,20 +26,20 @@ class Rectangle implements Shape
     }
 }
 
-class Sample
+public class Main
 {
    public static void main(String[] args)
    {
-       Scanner sc = new Scanner (System.in);
-       System.out.println("Enter the radius of the circle");
-       float r = sc.nextFloat();
-       Circle ob = new Circle();
+    Scanner sc = new Scanner (System.in);
+    System.out.println("Enter the radius of the circle");
+    float r = sc.nextFloat();
+    Circle ob = new Circle();
 	ob.area(r,r);
 	ob.perimeter(r,0);
-       System.out.println("Enter the length and breadth of the Rectangle");
-       float l = sc.nextFloat();
-       float b = sc.nextFloat();
-       Rectangle ob1 = new Rectangle();
+    System.out.println("Enter the length and breadth of the Rectangle");
+    float l = sc.nextFloat();
+    float b = sc.nextFloat();
+    Rectangle ob1 = new Rectangle();
 	ob1.area(l,b);
 	ob1.perimeter(l,b);
    }
