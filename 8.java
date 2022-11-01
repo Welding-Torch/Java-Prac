@@ -50,7 +50,7 @@ public class Main{
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
-        Main3 ob = new Main3();
+        Main ob = new Main();
         int i, j,ch;
         int [][] a = new int[3][3];
         int [][] b = new int[3][3];

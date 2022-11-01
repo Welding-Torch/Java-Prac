@@ -1,4 +1,4 @@
-import employee.*;
+// import Emp.*;
 import java.util.*;
 class Emppay
 {
@@ -21,11 +21,11 @@ class Emppay
        da=sc.nextFloat();
        System.out.print("Enter the Allowance the employee gets:");
        allowance=sc.nextFloat();
-       Emp ob = new Emp();
+       Emp ob = new Emp(name, empid, category, bpay, hra, da, allowance);
        ob.getGross();
        ob.calTax();
        ob.getNet();
        System.out.println("NAME\tID\tCATEGORY\tBASIC PAY\tHRA\tDA\tALLOWANCE\tGROSSPAY\tINCOMETAX\tNETPAY\tPF");
-       System.out.println(ob.name+"\t"+ob.empid+"\t"+ob.category+"\t"+ob.bpay+"\t"+ob.hraob.da+"\t"+ob.allowance+"\t"+ob.grosspay+"\t"+ob.incometax+"\t"+ob.npay+"\t"+ob.pf);
+       System.out.println(ob.name+"\t"+ob.empid+"\t"+ob.category+"\t"+ob.bpay+"\t"+ob.hra +"\t"+ob.da+"\t"+ob.allowance+"\t"+ob.grosspay+"\t"+ob.incometax+"\t"+ob.npay+"\t"+ob.pf);
    }
 }

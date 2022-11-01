@@ -1,4 +1,3 @@
-package employee;
 import java.util.*;
 
 public class Emp
@@ -6,7 +5,7 @@ public class Emp
     String name,empid,category;
     float bpay,hra,da,npay,pf,grosspay,allowance;
     double incometax;
-	Scanner sc = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in);
     public Emp(String na,String emp,String cat,float bp,float hr,float d,float allow)
     {
         bpay =bp ;
@@ -21,11 +20,13 @@ public class Emp
         empid=emp;
         category=cat;
     }
+
     public void getGross()
     {
         grosspay = hra+da+bpay+allowance;
-	pf=(float)0.12*grosspay;
+        pf=(float)0.12*grosspay;
     }
+
     public void calTax()
     {
         switch (category)
@@ -62,18 +63,17 @@ public class Emp
                 }
                 else if(grosspay>500000&&grosspay<=1000000) {
                     incometax=0.2*(grosspay-pf);
-		}
+                }
                 else {
                     incometax=100000+(0.3*(grosspay-1000000-pf));
                 }
                 break;
-                default:
-                    System.out.println("Wrong category entered");
-                    break;
-                    }
+            default:
+                System.out.println("Wrong category entered");
+                break;
         }
+    }
 
-    
     public void getNet()
     {
         npay=grosspay-pf-(float)incometax;

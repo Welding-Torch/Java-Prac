@@ -8,9 +8,9 @@ class Area{
 public class Main{
     public static void main(String[] args)
     {
-        Scanner sc = new Scanner (System.in);
+    Scanner sc = new Scanner (System.in);
 	Area ob = new Area();
-        System.out.println("Enter the length and breadth");
+    System.out.println("Enter the length and breadth");
 	float l = sc.nextFloat();
 	float b = sc.nextFloat();
 	float area = ob.returnArea(l,b);
