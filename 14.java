@@ -2,8 +2,8 @@
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-public class test{
-public test()
+public class Main{
+public Main()
 {
 Frame frame = new Frame("Applet program");
 Label l1 = new Label("Applet");
@@ -67,6 +67,6 @@ frame.dispose();
 }
 public static void main (String[] args)
 {
-test obj1 = new test();
+Main obj1 = new Main();
 }
 }
