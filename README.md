@@ -6,7 +6,7 @@ Note: When downloading and running one of the programs, be sure to rename the pr
 
 _For example:_ `1.java` will become `Main.java`
 
-Then type `javac main.java` to compile and `java main` to run.
+Then type `javac Main.java` to compile and `java Main` to run.
 
 ---
 Note: For Question 12, to compile and run the code you must type the following into a terminal:
