@@ -1,95 +1,162 @@
+import java.awt.Container;
+import java.awt.Font;
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-public class Q15 extends Frame{
-public Q15(){
-setTitle("Student Register Form");
-JLabel l = new JLabel("Register a new Student");
-Font font = new Font("Calibre",Font.BOLD,16);
-l.setFont(font);
-l.setBounds(100,40,200,60);
-add(l);
-Label l1 = new Label("Name");
-l1.setBounds(40,100,50,30);
-add(l1);
-TextField t1 = new TextField();
-t1.setBounds(180,100,200,30);
-add(t1);
-Label l2 = new Label("Gender");
-l2.setBounds(40,140,50,30);
-add(l2);
-CheckboxGroup cbg = new CheckboxGroup();
-Checkbox cb1 = new Checkbox("Male",cbg,false);
-cb1.setBounds(170,140,100,30);
-add(cb1);
-Checkbox cb2 = new Checkbox("Female",cbg,false);
-cb2.setBounds(280,140,100,30);
-add(cb2);
-Label l3 = new Label("Mail ID");
-l3.setBounds(40,180,50,30);
-add(l3);
-TextField t2 = new TextField();
-t2.setBounds(180,180,200,30);
-add(t2);
-Label l4 = new Label("Mobile No");
-l4.setBounds(40,220,70,30);
-add(l4);
-TextField t3 = new TextField();
-t3.setBounds(180,220,200,30);
-add(t3);
-Label l5 = new Label("Password");
-l5.setBounds(40,260,70,30);
-add(l5);
-JPasswordField jp1 = new JPasswordField();
-jp1.setBounds(180,260,200,30);
-add(jp1);
-Label l6 = new Label("Re Password");
-l6.setBounds(40,300,90,30);
-add(l6);
-
-JPasswordField jp2 = new JPasswordField();
-jp2.setBounds(180,300,200,30);
-add(jp2);
-Label l7 = new Label("Courses");
-l7.setBounds(40,340,90,30);
-add(l7);
-Choice c1 = new Choice();
-c1.setBounds(180,340,200,30);
-c1.add("ME/M-TECH");
-c1.add("BE/B-TECH");
-add(c1);
-Label l8 = new Label("Branches");
-l8.setBounds(40,380,90,30);
-add(l8);
-Choice c2 = new Choice();
-c2.setBounds(180,380,200,30);
-c2.add("CSE");
-c2.add("IT");
-c2.add("AI&DS");
-add(c2);
-Label l9 = new Label("Semester");
-l9.setBounds(40,420,90,30);
-add(l9);
-Choice c3 = new Choice();
-c3.setBounds(180,420,200,30);
-c3.add("I");
-c3.add("II");
-c3.add("III");
-add(c3);
-Button b = new Button("REGISTER");
-b.setBounds(180,460,200,30);
-add(b);
-setSize(800,600);
-setLayout(null);
-setVisible(true);
-addWindowListener(new WindowAdapter() {
-@Override
-public void windowClosing(WindowEvent e) {
-dispose();
-}
-});
-}
-public static void main(String[] args) {
-Q15 r1 = new Q15();
+ 
+public class Main extends JFrame {
+ 
+    JLabel message;
+    JLabel nameLabel, dobLabel, genderLabel, dobFormat;
+    JTextField nameField;
+    JRadioButton genderMale, genderFemale;
+    ButtonGroup genderGroup;
+ 
+    JLabel mailIdLabel, mobileNoLabel;
+    JTextField mailIdField, mobileNoField;
+ 
+    JLabel passwordLabel, rePasswordLabel;
+    JPasswordField passwordField, rePasswordField;
+ 
+    JLabel programLabel;
+    JComboBox<String> programList;
+ 
+    JLabel branchLabel, semesterLabel;
+    JComboBox<String> branchList;
+    JComboBox<Integer> semesterList;
+ 
+    JButton registerButton;
+    Container container;
+ 
+    public Main() {
+        message = new JLabel("Register a new Student");
+        message.setFont(new Font("Courier", Font.BOLD, 20));
+        nameLabel = new JLabel("Name");
+        nameField = new JTextField();
+ 
+        dobLabel = new JLabel("DOB");
+ 
+        genderLabel = new JLabel("Gender");
+        genderMale = new JRadioButton("Male", true);
+        genderFemale = new JRadioButton("Female");
+        genderGroup = new ButtonGroup();
+        genderGroup.add(genderMale);
+        genderGroup.add(genderFemale);
+ 
+        mailIdLabel = new JLabel("Mail Id");
+        mailIdField = new JTextField();
+ 
+        mobileNoLabel = new JLabel("Mobile No");
+        mobileNoField = new JTextField();
+ 
+        passwordLabel = new JLabel("Password");
+        passwordField = new JPasswordField();
+ 
+        rePasswordLabel = new JLabel("Re Password");
+        rePasswordField = new JPasswordField();
+ 
+        programLabel = new JLabel("Courses");
+        programList = new JComboBox<String>();
+ 
+        programList.addItem("ME/M Tect");
+        programList.addItem("BE/B Tect");
+        programList.addItem("Diploma");
+ 
+        branchLabel = new JLabel("Branch");
+        branchList = new JComboBox<String>();
+ 
+        branchList.addItem("Computer Science and Engineering");
+        branchList.addItem("Electronics and Telecommunications");
+        branchList.addItem("Information Technology");
+        branchList.addItem("Electrical Engineering");
+        branchList.addItem("Electrical and Electronics Engineering");
+        branchList.addItem("Civil Engineering");
+ 
+        semesterLabel = new JLabel("Semester");
+        semesterList = new JComboBox<>();
+        semesterList.addItem(1);
+        semesterList.addItem(2);
+        semesterList.addItem(3);
+        semesterList.addItem(4);
+        semesterList.addItem(5);
+        semesterList.addItem(6);
+        semesterList.addItem(7);
+        semesterList.addItem(8);
+ 
+        registerButton = new JButton("Register");
+        container = getContentPane();
+        container.setLayout(null);
+        setBounds();
+        addComponents();
+ 
+    }
+ 
+    public void setBounds() {
+        message.setBounds(50, 10, 600, 30);
+        nameLabel.setBounds(50, 60, 100, 30);
+        nameField.setBounds(130, 60, 200, 30);
+ 
+        dobLabel.setBounds(50, 110, 100, 30);
+ 
+        genderLabel.setBounds(50, 160, 100, 30);
+        genderMale.setBounds(130, 160, 100, 30);
+        genderFemale.setBounds(240, 160, 100, 30);
+ 
+        mailIdLabel.setBounds(50, 210, 100, 30);
+        mailIdField.setBounds(130, 210, 200, 30);
+ 
+        mobileNoLabel.setBounds(50, 260, 100, 30);
+        mobileNoField.setBounds(130, 260, 200, 30);
+ 
+        passwordLabel.setBounds(50, 310, 100, 30);
+        passwordField.setBounds(130, 310, 200, 30);
+ 
+        rePasswordLabel.setBounds(50, 360, 100, 30);
+        rePasswordField.setBounds(130, 360, 200, 30);
+ 
+        programLabel.setBounds(50, 410, 100, 30);
+        programList.setBounds(130, 410, 200, 30);
+ 
+        branchLabel.setBounds(50, 460, 100, 30);
+        branchList.setBounds(130, 460, 200, 30);
+ 
+        semesterLabel.setBounds(50, 510, 100, 30);
+        semesterList.setBounds(130, 510, 200, 30);
+ 
+        registerButton.setBounds(130, 550, 200, 30);
+    }
+ 
+    public void addComponents() {
+        container.add(message);
+        container.add(nameLabel);
+        container.add(nameField);
+        //container.add(dobLabel);
+        container.add(genderLabel);
+        container.add(genderMale);
+        container.add(genderFemale);
+        container.add(mailIdLabel);
+        container.add(mailIdField);
+        container.add(mobileNoLabel);
+        container.add(mobileNoField);
+        container.add(passwordLabel);
+        container.add(passwordField);
+        container.add(rePasswordLabel);
+        container.add(rePasswordField);
+        container.add(programLabel);
+        container.add(programList);
+        container.add(branchLabel);
+        container.add(branchList);
+        container.add(semesterLabel);
+        container.add(semesterList);
+        container.add(registerButton);
+    }
+ 
+    public static void main(String[] args) {
+        Main frame = new Main();
+        frame.setTitle("Student Register Form");
+        frame.setVisible(true);
+        frame.setBounds(500, 100, 500, 700);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setResizable(true);
+ 
+    }
+ 
 }
